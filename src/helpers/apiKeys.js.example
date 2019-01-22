@@ -1,0 +1,16 @@
+const apiKeys = {
+  firebaseConfig: {
+    apiKey: '',
+    authDomain: '',
+    databaseURL: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
+
+  },
+  countryApi: {
+    countryStuff: '',
+  },
+};
+
+export default apiKeys;
