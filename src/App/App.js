@@ -17,6 +17,7 @@ import MyNavbar from '../components/navbar/navbar';
 
 import './App.scss';
 import authRequests from '../helpers/data/authRequests';
+import tripRequests from '../helpers/data/tripRequest';
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
   const routeChecker = props => (authed === false
