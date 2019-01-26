@@ -19,15 +19,18 @@ const getTripData = () => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-const deleteTripData = tripId => axios.delete(`${firebaseUrl}/vacation/${tripId}.json`);
+const deleteTripData = tripId => axios.delete(`${firebaseUrl}/vacations/${tripId}.json`);
 
-const postTrip = trip => axios.post(`${firebaseUrl}/vacation.json`, trip);
+const postTrip = trip => axios.post(`${firebaseUrl}/vacations.json`, trip);
 
-const updateTrip = (tripId, isCompleted) => axios.patch(`${firebaseUrl}/trip/${tripId}.json`, { isCompleted });
+const getSingleTrip = tripId => axios.get(`${firebaseUrl}/vacations/${tripId}.json`);
+
+const updateTrip = (tripId, trip) => axios.patch(`${firebaseUrl}/vacations/${tripId}.json`, trip);
 
 export default {
   getTripData,
   deleteTripData,
   postTrip,
   updateTrip,
+  getSingleTrip,
 };

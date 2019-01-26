@@ -20,20 +20,8 @@ componentDidMount() {
     .catch(err => console.error('error with listing GET', err));
 }
 
-updateTrip = (tripId, isCompleted) => {
-  tripRequest.updateBlog(tripId, isCompleted)
-    .then(() => {
-      tripRequest.getBlogData()
-        .then((trips) => {
-          trips.sort((x, y) => x.isCompleted - y.isCompleted);
-          this.setState({ trips });
-        });
-    })
-    .catch(err => console.error(err));
-}
-
-deleteTrip = (tripId) => {
-  tripRequest.deleteTripData(tripId)
+updateTrip = (tripId) => {
+  tripRequest.updateTrip(tripId)
     .then(() => {
       tripRequest.getTripData()
         .then((trips) => {
@@ -42,6 +30,42 @@ deleteTrip = (tripId) => {
     })
     .catch(err => console.error(err));
 }
+
+deleteOne = (tripId) => {
+  tripRequest.deleteTripData(tripId)
+    .then(() => {
+      tripRequest.getTripData()
+        .then((trips) => {
+          this.setState({ trips });
+        });
+    })
+    .catch(err => console.error('error with delete single', err));
+}
+
+formSubmitEvent = (newTrip) => {
+  const { isEditing, editId } = this.state;
+  if (isEditing) {
+    tripRequest.updateTrip(editId, newTrip)
+      .then(() => {
+        tripRequest.getTripData()
+          .then((trips) => {
+            this.setState({ trips, isEditing: false, editId: '-1' });
+          });
+      })
+      .catch(err => console.error('error with listings post', err));
+  } else {
+    tripRequest.postTrip(newTrip)
+      .then(() => {
+        tripRequest.getTripData()
+          .then((trips) => {
+            this.setState({ trips });
+          });
+      })
+      .catch(err => console.error('error with listings post', err));
+  }
+}
+
+passTripToEdit = tripId => this.setState({ isEditing: true, editId: tripId });
 
 render() {
   const {
@@ -58,6 +82,9 @@ render() {
           deleteSingleTrip={this.deleteOne}
           passTripToEdit={this.passTripToEdit}
         />
+        <div className="row">
+        <TripForm onSubmit={this.formSubmitEvent} isEditing={isEditing} editId={editId}/>
+      </div>
       </div>
     </div>
   );

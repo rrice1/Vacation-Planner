@@ -6,7 +6,7 @@ import './TripList.scss';
 
 class TripList extends React.Component {
   static propTypes = {
-    // trips: PropTypes.arrayOf(tripShape.tripShape),
+    trips: PropTypes.arrayOf(tripShape),
     deleteSingleTrip: PropTypes.func,
     passTripToEdit: PropTypes.func,
   }
