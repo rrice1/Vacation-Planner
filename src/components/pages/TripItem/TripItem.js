@@ -8,7 +8,7 @@ import './TripItem.scss';
 
 class TripItem extends React.Component {
   static propTypes = {
-    // trip: tripShape.tripShape,
+    trip: tripShape,
     deleteSingleTrip: PropTypes.func,
     passTripToEdit: PropTypes.func,
   }
@@ -51,6 +51,9 @@ class TripItem extends React.Component {
     return (
       <li className="trip-item text-center" onClick={this.tripClick}>
         <span className="col-7">{trip.vacationName}</span>
+        <span className="col-7">{trip.country}</span>
+        <span className="col-7">{trip.finalCost} {trip.currency}</span>
+
         {makeButtons()}
       </li>
     );
