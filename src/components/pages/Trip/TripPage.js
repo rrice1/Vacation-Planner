@@ -2,7 +2,6 @@ import React from 'react';
 import './TripPage.scss';
 import tripRequest from '../../../helpers/data/tripRequest';
 import TripList from '../TripList/TripList';
-import TripForm from '../TripForm/TripForm';
 
 class tripPage extends React.Component {
 state= {
@@ -51,8 +50,6 @@ passTripToEdit = tripId => this.props.history.push(`/trips/${tripId}/edit`)
 render() {
   const {
     trips,
-    isEditing,
-    editId,
   } = this.state;
 
   return (

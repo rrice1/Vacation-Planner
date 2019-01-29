@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './TripForm.scss';
 import authRequests from '../../../helpers/data/authRequests';
-import tripRequest from '../../../helpers/data/tripRequest';
 
 const defaultTrip = {
   vacationName: '',
