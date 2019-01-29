@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './TripForm.scss';
 import authRequests from '../../../helpers/data/authRequests';
-import tripRequest from '../../../helpers/data/tripRequest';
 
 const defaultTrip = {
   vacationName: '',
@@ -20,8 +19,6 @@ const defaultTrip = {
 class TripForm extends React.Component {
   static propTypes = {
     onSubmit: PropTypes.func,
-    isEditing: PropTypes.bool,
-    editId: PropTypes.string,
   }
 
   state = {
@@ -62,20 +59,21 @@ class TripForm extends React.Component {
   formSubmit = (e) => {
     e.preventDefault();
     const { onSubmit } = this.props;
-    const myListing = { ...this.state.newTrip };
-    myListing.uid = authRequests.getCurrentUid();
-    onSubmit(myListing);
+    const myTrip = { ...this.state.newTrip };
+    myTrip.uid = authRequests.getCurrentUid();
+    onSubmit(myTrip);
     this.setState({ newTrip: defaultTrip });
   }
 
+  // componentDidMount() {
+  //   this.setState({ newTrip: defaultTrip });
+  // }
+
   componentDidUpdate(prevProps) {
-    const { isEditing, editId } = this.props;
-    if (prevProps !== this.props && isEditing) {
-      tripRequest.getSingleTrip(editId)
-        .then((trip) => {
-          this.setState({ newTrip: trip.data });
-        })
-        .catch(err => console.error('error with getSingleListing', err));
+    const { trip } = this.props;
+    // if (prevProps !== this.props && Object.keys(trip).length) {
+    if (prevProps !== this.props && trip) {
+      this.setState({ newTrip: trip });
     }
   }
 
