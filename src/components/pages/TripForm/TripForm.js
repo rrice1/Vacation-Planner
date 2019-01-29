@@ -66,16 +66,17 @@ class TripForm extends React.Component {
     this.setState({ newTrip: defaultTrip });
   }
 
-  // componentDidUpdate(prevProps) {
-  //   const { isEditing, editId } = this.props;
-  //   if (prevProps !== this.props && isEditing) {
-  //     tripRequest.getSingleTrip(editId)
-  //       .then((trip) => {
-  //         this.setState({ newTrip: trip.data });
-  //       })
-  //       .catch(err => console.error('error with getSingleListing', err));
-  //   }
+  // componentDidMount() {
+  //   this.setState({ newTrip: defaultTrip });
   // }
+
+  componentDidUpdate(prevProps) {
+    const { trip } = this.props;
+    // if (prevProps !== this.props && Object.keys(trip).length) {
+    if (prevProps !== this.props && trip) {
+      this.setState({ newTrip: trip });
+    }
+  }
 
   render() {
     const { newTrip } = this.state;

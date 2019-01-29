@@ -20,9 +20,8 @@ class AddTrip extends React.Component {
   render() {
     return (
       <div>
-      <h2>AddTrip Component</h2>
       <div className="row">
-        <TripForm onSubmit={this.formSubmitEvent} />
+        <TripForm onSubmit={this.formSubmitEvent} trip={{}} />
       </div>
       </div>
     );

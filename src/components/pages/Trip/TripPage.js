@@ -46,7 +46,7 @@ deleteOne = (tripId) => {
 // + this.trip.gasConsumed + this.trip.localTransportationOneWay + this.trip.bananas
 
 
-passTripToEdit = tripId => this.setState({ isEditing: true, editId: tripId });
+passTripToEdit = tripId => this.props.history.push(`/trips/${tripId}/edit`)
 
 render() {
   const {
