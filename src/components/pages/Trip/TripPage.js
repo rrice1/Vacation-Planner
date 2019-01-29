@@ -42,28 +42,9 @@ deleteOne = (tripId) => {
     .catch(err => console.error('error with delete single', err));
 }
 
-formSubmitEvent = (newTrip) => {
-  const { isEditing, editId } = this.state;
-  if (isEditing) {
-    tripRequest.updateTrip(editId, newTrip)
-      .then(() => {
-        tripRequest.getTripData()
-          .then((trips) => {
-            this.setState({ trips, isEditing: false, editId: '-1' });
-          });
-      })
-      .catch(err => console.error('error with listings post', err));
-  } else {
-    tripRequest.postTrip(newTrip)
-      .then(() => {
-        tripRequest.getTripData()
-          .then((trips) => {
-            this.setState({ trips });
-          });
-      })
-      .catch(err => console.error('error with listings post', err));
-  }
-}
+// calcFinalCost = this.trip.inexpensiveRestaurant + this.trip.threeCourseMeal + this.trip.threeCourseMeal + this.trip.domesticBeer + this.trip.waterBottles
+// + this.trip.gasConsumed + this.trip.localTransportationOneWay + this.trip.bananas
+
 
 passTripToEdit = tripId => this.setState({ isEditing: true, editId: tripId });
 
@@ -82,9 +63,6 @@ render() {
           deleteSingleTrip={this.deleteOne}
           passTripToEdit={this.passTripToEdit}
         />
-        <div className="row">
-        <TripForm onSubmit={this.formSubmitEvent} isEditing={isEditing} editId={editId}/>
-      </div>
       </div>
     </div>
   );

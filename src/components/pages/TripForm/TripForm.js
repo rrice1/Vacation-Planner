@@ -20,8 +20,6 @@ const defaultTrip = {
 class TripForm extends React.Component {
   static propTypes = {
     onSubmit: PropTypes.func,
-    isEditing: PropTypes.bool,
-    editId: PropTypes.string,
   }
 
   state = {
@@ -62,22 +60,22 @@ class TripForm extends React.Component {
   formSubmit = (e) => {
     e.preventDefault();
     const { onSubmit } = this.props;
-    const myListing = { ...this.state.newTrip };
-    myListing.uid = authRequests.getCurrentUid();
-    onSubmit(myListing);
+    const myTrip = { ...this.state.newTrip };
+    myTrip.uid = authRequests.getCurrentUid();
+    onSubmit(myTrip);
     this.setState({ newTrip: defaultTrip });
   }
 
-  componentDidUpdate(prevProps) {
-    const { isEditing, editId } = this.props;
-    if (prevProps !== this.props && isEditing) {
-      tripRequest.getSingleTrip(editId)
-        .then((trip) => {
-          this.setState({ newTrip: trip.data });
-        })
-        .catch(err => console.error('error with getSingleListing', err));
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   const { isEditing, editId } = this.props;
+  //   if (prevProps !== this.props && isEditing) {
+  //     tripRequest.getSingleTrip(editId)
+  //       .then((trip) => {
+  //         this.setState({ newTrip: trip.data });
+  //       })
+  //       .catch(err => console.error('error with getSingleListing', err));
+  //   }
+  // }
 
   render() {
     const { newTrip } = this.state;
