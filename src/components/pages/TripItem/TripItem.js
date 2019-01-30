@@ -52,8 +52,7 @@ class TripItem extends React.Component {
       <li className="trip-item text-center" onClick={this.tripClick}>
         <span className="col-7">{trip.vacationName}</span>
         <span className="col-7">{trip.country}</span>
-        <span className="col-7">{trip.finalCost} {trip.currency}</span>
-
+        <span className="col-7">{trip.finalCost} {trip.currency} or {trip.finalCostExchange} USD</span>
         {makeButtons()}
       </li>
     );

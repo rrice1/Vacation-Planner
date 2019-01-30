@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './TripForm.scss';
 import authRequests from '../../../helpers/data/authRequests';
+import getApiData from '../../../helpers/data/apiRequest';
 
 const defaultTrip = {
   vacationName: '',
@@ -13,6 +14,9 @@ const defaultTrip = {
   gasConsumed: 0,
   localTransportationOneWay: 0,
   bananas: 0,
+  finalCost: 0,
+  finalCostExchange: 0,
+  currency: '',
   uid: '',
 };
 
@@ -61,8 +65,28 @@ class TripForm extends React.Component {
     const { onSubmit } = this.props;
     const myTrip = { ...this.state.newTrip };
     myTrip.uid = authRequests.getCurrentUid();
-    onSubmit(myTrip);
     this.setState({ newTrip: defaultTrip });
+    getApiData.getCountryData(this.state.newTrip.country)
+      .then((country) => {
+        myTrip.country = country.name;
+        myTrip.finalCost = (myTrip.inexpensiveRestaurant * country.prices[0].average_price) + (myTrip.threeCourseMeal * country.prices[1].average_price) + (myTrip.domesticBeer * Math.round(country.prices[13].average_price)) + (myTrip.waterBottles * Math.round(country.prices[11].average_price)) + (myTrip.gasConsumed * Math.round(country.prices[19].average_price)) + (myTrip.localTransportationOneWay * Math.round(country.prices[16].average_price)) + (myTrip.bananas * Math.round(country.prices[52].average_price));
+        myTrip.currency = country.currency;
+        getApiData.getRate(myTrip.currency)
+          .then((rate) => {
+            console.log('rate:', rate);
+            console.log(Math.round((myTrip.finalCost * rate)));
+            myTrip.finalCostExchange = Math.round((myTrip.finalCost * rate));
+            onSubmit(myTrip);
+          })
+          .catch(err => console.error(err));
+        console.log(getApiData.getRate(myTrip.currency)['Realtime Currency Exchange Rate']);
+        console.log(getApiData.getRate(myTrip.currency));
+        console.log(myTrip.finalCost);
+        console.log(country.prices[0].average_price);
+        console.log(myTrip.country);
+        console.log(getApiData.getCountryData(country.name));
+      })
+      .catch(err => console.error(err));
   }
 
   // componentDidMount() {
