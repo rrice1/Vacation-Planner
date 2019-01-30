@@ -2,7 +2,7 @@
 	"vacation1": {
 		"uid": "CJnxunlfYHXaahb5d4fIZvLG5uy2",
 		"vacationName": "Trip to Chicago",
-    "country": "USA",
+    "country": "United States",
     "inexpensiveRestaurant": 1,
     "threeCourseMeal": 2,
     "domesticBeer": 3,
@@ -11,6 +11,7 @@
     "localTransportationOneWay": 6,
     "bananas": 7,
     "finalCost": 200,
+    "finalCostExchange": 200,
     "tripDate": "2012-04-23T18:25:43.511Z",
     "numberOfDays": 7,
     "currency": "USD"
@@ -18,7 +19,7 @@
   "vacation2": {
 		"uid": "CJnxunlfYHXaahb5d4fIZvLG5uy2",
 		"vacationName": "Trip to Morocco",
-    "country": "USA",
+    "country": "Morocco",
     "inexpensiveRestaurant": 1,
     "threeCourseMeal": 2,
     "domesticBeer": 3,
@@ -26,15 +27,16 @@
     "gasConsumed": 5,
     "localTransportationOneWay": 6,
     "bananas": 7,
-    "finalCost": 200,
+    "finalCost": 300,
+    "finalCostExchange": 32,
     "tripDate": "2012-04-23T18:25:43.511Z",
     "numberOfDays": 7,
-    "currency": "USD"
+    "currency": "MAD"
   },
   "vacation3": {
 		"uid": "CJnxunlfYHXaahb5d4fIZvLG5uy2",
-		"vacationName": "Trip to Morocco",
-    "country": "USA",
+		"vacationName": "Trip to China",
+    "country": "China",
     "inexpensiveRestaurant": 1,
     "threeCourseMeal": 2,
     "domesticBeer": 3,
@@ -42,15 +44,16 @@
     "gasConsumed": 5,
     "localTransportationOneWay": 6,
     "bananas": 7,
-    "finalCost": 200,
+    "finalCost": 794,
+    "finalCostExchange": 118,
     "tripDate": "2012-04-23T18:25:43.511Z",
     "numberOfDays": 7,
-    "currency": "USD"
+    "currency": "CNY"
   },
   "vacation4": {
 		"uid": "CJnxunlfYHXaahb5d4fIZvLG5uy2",
-		"vacationName": "Trip to Morocco",
-    "country": "USA",
+		"vacationName": "Trip to Japan",
+    "country": "Japan",
     "inexpensiveRestaurant": 1,
     "threeCourseMeal": 2,
     "domesticBeer": 3,
@@ -58,15 +61,16 @@
     "gasConsumed": 5,
     "localTransportationOneWay": 6,
     "bananas": 7,
-    "finalCost": 200,
+    "finalCost": 26610,
+    "finalCostExchange": 243,
     "tripDate": "2012-04-23T18:25:43.511Z",
     "numberOfDays": 7,
-    "currency": "USD"
+    "currency": "JPY"
   },
   "vacation5": {
 		"uid": "firebaseUid",
-		"vacationName": "Trip to Morocco",
-    "country": "USA",
+		"vacationName": "Trip to Nashville",
+    "country": "United States",
     "inexpensiveRestaurant": 1,
     "threeCourseMeal": 2,
     "domesticBeer": 3,
@@ -74,7 +78,8 @@
     "gasConsumed": 5,
     "localTransportationOneWay": 6,
     "bananas": 7,
-    "finalCost": 200,
+    "finalCost": 350,
+    "finalCostExchange": 350,
     "tripDate": "2012-04-23T18:25:43.511Z",
     "numberOfDays": 7,
     "currency": "USD"
