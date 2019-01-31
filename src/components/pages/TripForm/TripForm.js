@@ -16,6 +16,7 @@ const defaultTrip = {
   bananas: 0,
   finalCost: 0,
   finalCostExchange: 0,
+  startDate: 0,
   currency: '',
   uid: '',
 };
@@ -59,6 +60,8 @@ class TripForm extends React.Component {
   localTransportationOneWayChange = e => this.formFieldNumberState('localTransportationOneWay', e);
 
   bananasChange = e => this.formFieldNumberState('bananas', e);
+
+  startDateChange = e => this.formFieldNumberState('startDate', e);
 
   formSubmit = (e) => {
     e.preventDefault();
@@ -220,6 +223,18 @@ class TripForm extends React.Component {
               placeholder="6"
               value={newTrip.bananas}
               onChange={this.bananasChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="startDate">Start Date:</label>
+            <input
+              type="date"
+              className="form-control"
+              id="startDate"
+              aria-describedby="startDateHelp"
+              placeholder="Type Date Here"
+              value={newTrip.startDate}
+              onChange={this.startDateChange}
             />
           </div>
           <button className="btn btn-danger">Save Trip</button>

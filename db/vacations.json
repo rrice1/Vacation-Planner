@@ -12,7 +12,7 @@
     "bananas": 7,
     "finalCost": 200,
     "finalCostExchange": 200,
-    "tripDate": "2012-04-23T18:25:43.511Z",
+    "startDate": "1528763298535",
     "numberOfDays": 7,
     "currency": "USD"
   },
@@ -29,7 +29,7 @@
     "bananas": 7,
     "finalCost": 300,
     "finalCostExchange": 32,
-    "tripDate": "2012-04-23T18:25:43.511Z",
+    "startDate": "1528763298535",
     "numberOfDays": 7,
     "currency": "MAD"
   },
@@ -46,7 +46,7 @@
     "bananas": 7,
     "finalCost": 794,
     "finalCostExchange": 118,
-    "tripDate": "2012-04-23T18:25:43.511Z",
+    "startDate": "1528763298535",
     "numberOfDays": 7,
     "currency": "CNY"
   },
@@ -63,7 +63,7 @@
     "bananas": 7,
     "finalCost": 26610,
     "finalCostExchange": 243,
-    "tripDate": "2012-04-23T18:25:43.511Z",
+    "startDate": "1528763298535",
     "numberOfDays": 7,
     "currency": "JPY"
   },
@@ -80,7 +80,7 @@
     "bananas": 7,
     "finalCost": 350,
     "finalCostExchange": 350,
-    "tripDate": "2012-04-23T18:25:43.511Z",
+    "startDate": "1528763298535",
     "numberOfDays": 7,
     "currency": "USD"
   }

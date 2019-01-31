@@ -11,6 +11,7 @@ const funPropz = PropTypes.shape({
   gasConsumed: PropTypes.number.isRequired,
   localTransportationOneWay: PropTypes.number.isRequired,
   bananas: PropTypes.number.isRequired,
+  startDate: PropTypes.number.isRequired,
 });
 
 export default funPropz;

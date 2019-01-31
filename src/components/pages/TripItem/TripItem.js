@@ -53,6 +53,7 @@ class TripItem extends React.Component {
         <span className="col-7">{trip.vacationName}</span>
         <span className="col-7">{trip.country}</span>
         <span className="col-7">{trip.finalCost} {trip.currency} or {trip.finalCostExchange} USD</span>
+        <span className="col-7">{trip.startDate}</span>
         {makeButtons()}
       </li>
     );
