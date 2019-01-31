@@ -16,7 +16,7 @@ const defaultTrip = {
   bananas: 0,
   finalCost: 0,
   finalCostExchange: 0,
-  startDate: 0,
+  startDate: '',
   currency: '',
   uid: '',
 };
@@ -61,7 +61,7 @@ class TripForm extends React.Component {
 
   bananasChange = e => this.formFieldNumberState('bananas', e);
 
-  startDateChange = e => this.formFieldNumberState('startDate', e);
+  startDateChange = e => this.formFieldStringState('startDate', e);
 
   formSubmit = (e) => {
     e.preventDefault();
@@ -232,7 +232,7 @@ class TripForm extends React.Component {
               className="form-control"
               id="startDate"
               aria-describedby="startDateHelp"
-              placeholder="Type Date Here"
+              placeholder="01/12/2019"
               value={newTrip.startDate}
               onChange={this.startDateChange}
             />
