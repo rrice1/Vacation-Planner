@@ -92,13 +92,8 @@ class TripForm extends React.Component {
       .catch(err => console.error(err));
   }
 
-  // componentDidMount() {
-  //   this.setState({ newTrip: defaultTrip });
-  // }
-
   componentDidUpdate(prevProps) {
     const { trip } = this.props;
-    // if (prevProps !== this.props && Object.keys(trip).length) {
     if (prevProps !== this.props && trip) {
       this.setState({ newTrip: trip });
     }

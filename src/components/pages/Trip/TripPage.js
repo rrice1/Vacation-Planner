@@ -41,10 +41,6 @@ deleteOne = (tripId) => {
     .catch(err => console.error('error with delete single', err));
 }
 
-// calcFinalCost = this.trip.inexpensiveRestaurant + this.trip.threeCourseMeal + this.trip.threeCourseMeal + this.trip.domesticBeer + this.trip.waterBottles
-// + this.trip.gasConsumed + this.trip.localTransportationOneWay + this.trip.bananas
-
-
 passTripToEdit = tripId => this.props.history.push(`/trips/${tripId}/edit`)
 
 render() {
