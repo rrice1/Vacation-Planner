@@ -4,6 +4,7 @@ const funPropz = PropTypes.shape({
   uid: PropTypes.string.isRequired,
   vacationName: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
+  country2: PropTypes.string.isRequired,
   inexpensiveRestaurant: PropTypes.number.isRequired,
   threeCourseMeal: PropTypes.number.isRequired,
   domesticBeer: PropTypes.number.isRequired,
@@ -12,6 +13,7 @@ const funPropz = PropTypes.shape({
   localTransportationOneWay: PropTypes.number.isRequired,
   bananas: PropTypes.number.isRequired,
   startDate: PropTypes.string.isRequired,
+  endDate: PropTypes.string.isRequired,
 });
 
 export default funPropz;

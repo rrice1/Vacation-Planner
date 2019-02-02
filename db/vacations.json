@@ -3,6 +3,7 @@
 		"uid": "CJnxunlfYHXaahb5d4fIZvLG5uy2",
 		"vacationName": "Trip to Chicago",
     "country": "United States",
+    "country2": "Germany",
     "inexpensiveRestaurant": 1,
     "threeCourseMeal": 2,
     "domesticBeer": 3,
@@ -13,13 +14,16 @@
     "finalCost": 200,
     "finalCostExchange": 200,
     "startDate": "2019-01-11",
+    "endDate": "2019-01-21",
     "numberOfDays": 7,
-    "currency": "USD"
+    "currency": "USD",
+    "currency2": "MAD"
   },
   "vacation2": {
 		"uid": "CJnxunlfYHXaahb5d4fIZvLG5uy2",
 		"vacationName": "Trip to Morocco",
     "country": "Morocco",
+    "country2": "China",
     "inexpensiveRestaurant": 1,
     "threeCourseMeal": 2,
     "domesticBeer": 3,
@@ -30,13 +34,16 @@
     "finalCost": 300,
     "finalCostExchange": 32,
     "startDate": "2019-02-25",
+    "endDate": "2019-03-07",
     "numberOfDays": 7,
-    "currency": "MAD"
+    "currency": "MAD",
+    "currency2": "MAD"
   },
   "vacation3": {
 		"uid": "CJnxunlfYHXaahb5d4fIZvLG5uy2",
 		"vacationName": "Trip to China",
     "country": "China",
+    "country2": "India",
     "inexpensiveRestaurant": 1,
     "threeCourseMeal": 2,
     "domesticBeer": 3,
@@ -47,13 +54,16 @@
     "finalCost": 794,
     "finalCostExchange": 118,
     "startDate": "2019-03-07",
+    "endDate": "2019-04-15",
     "numberOfDays": 7,
-    "currency": "CNY"
+    "currency": "CNY",
+    "currency2": "MAD"
   },
   "vacation4": {
 		"uid": "CJnxunlfYHXaahb5d4fIZvLG5uy2",
 		"vacationName": "Trip to Japan",
     "country": "Japan",
+    "country2": "England",
     "inexpensiveRestaurant": 1,
     "threeCourseMeal": 2,
     "domesticBeer": 3,
@@ -64,13 +74,16 @@
     "finalCost": 26610,
     "finalCostExchange": 243,
     "startDate": "2019-05-31",
+    "endDate": "2019-06-11",
     "numberOfDays": 7,
-    "currency": "JPY"
+    "currency": "JPY",
+    "currency2": "MAD"
   },
   "vacation5": {
 		"uid": "firebaseUid",
 		"vacationName": "Trip to Nashville",
     "country": "United States",
+    "country2": "France",
     "inexpensiveRestaurant": 1,
     "threeCourseMeal": 2,
     "domesticBeer": 3,
@@ -81,7 +94,9 @@
     "finalCost": 350,
     "finalCostExchange": 350,
     "startDate": "2019-07-04",
+    "endDate": "2019-07-11",
     "numberOfDays": 7,
-    "currency": "USD"
+    "currency": "USD",
+    "currency2": "MAD"
   }
 }
