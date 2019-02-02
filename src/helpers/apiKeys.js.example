@@ -11,6 +11,9 @@ const apiKeys = {
   countryApi: {
     countryStuff: '',
   },
+    priceApi: {
+    exchangeRate: '',
+  },
 };
 
 export default apiKeys;

@@ -7,6 +7,7 @@ import getApiData from '../../../helpers/data/apiRequest';
 const defaultTrip = {
   vacationName: '',
   country: '',
+  country2: '',
   inexpensiveRestaurant: 0,
   threeCourseMeal: 0,
   domesticBeer: 0,
@@ -17,7 +18,9 @@ const defaultTrip = {
   finalCost: 0,
   finalCostExchange: 0,
   startDate: '',
+  endDate: '',
   currency: '',
+  currency2: '',
   uid: '',
 };
 
@@ -47,6 +50,8 @@ class TripForm extends React.Component {
 
   countryChange = e => this.formFieldStringState('country', e);
 
+  country2Change = e => this.formFieldStringState('country2', e);
+
   inexpensiveRestaurantChange = e => this.formFieldNumberState('inexpensiveRestaurant', e);
 
   threeCourseMealChange = e => this.formFieldNumberState('threeCourseMeal', e);
@@ -63,31 +68,29 @@ class TripForm extends React.Component {
 
   startDateChange = e => this.formFieldStringState('startDate', e);
 
+  endDateChange = e => this.formFieldStringState('endDate', e);
+
   formSubmit = (e) => {
     e.preventDefault();
     const { onSubmit } = this.props;
     const myTrip = { ...this.state.newTrip };
     myTrip.uid = authRequests.getCurrentUid();
     this.setState({ newTrip: defaultTrip });
-    getApiData.getCountryData(this.state.newTrip.country)
+    getApiData.getCountryData(myTrip.country)
       .then((country) => {
         myTrip.country = country.name;
         myTrip.finalCost = (myTrip.inexpensiveRestaurant * country.prices[0].average_price) + (myTrip.threeCourseMeal * country.prices[1].average_price) + (myTrip.domesticBeer * Math.round(country.prices[13].average_price)) + (myTrip.waterBottles * Math.round(country.prices[11].average_price)) + (myTrip.gasConsumed * Math.round(country.prices[19].average_price)) + (myTrip.localTransportationOneWay * Math.round(country.prices[16].average_price)) + (myTrip.bananas * Math.round(country.prices[52].average_price));
         myTrip.currency = country.currency;
-        getApiData.getRate(myTrip.currency)
-          .then((rate) => {
-            console.log('rate:', rate);
-            console.log(Math.round((myTrip.finalCost * rate)));
-            myTrip.finalCostExchange = Math.round((myTrip.finalCost * rate));
-            onSubmit(myTrip);
-          })
-          .catch(err => console.error(err));
-        console.log(getApiData.getRate(myTrip.currency)['Realtime Currency Exchange Rate']);
-        console.log(getApiData.getRate(myTrip.currency));
-        console.log(myTrip.finalCost);
-        console.log(country.prices[0].average_price);
-        console.log(myTrip.country);
-        console.log(getApiData.getCountryData(country.name));
+        getApiData.getCountry2Data(myTrip.country2)
+          .then((country2) => {
+            myTrip.country2 = country2.name;
+            myTrip.currency2 = country2.currency;
+            getApiData.getRate(myTrip.currency, myTrip.currency2)
+              .then((rate) => {
+                myTrip.finalCostExchange = Math.round((myTrip.finalCost * rate));
+                onSubmit(myTrip);
+              });
+          });
       })
       .catch(err => console.error(err));
   }
@@ -134,6 +137,18 @@ class TripForm extends React.Component {
               placeholder="Morocco"
               value={newTrip.country}
               onChange={this.countryChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="country2">Your home country:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="country2"
+              aria-describedby="country2Help"
+              placeholder="Morocco"
+              value={newTrip.country2}
+              onChange={this.country2Change}
             />
           </div>
           <div className="form-group">
@@ -230,6 +245,18 @@ class TripForm extends React.Component {
               placeholder="01/12/2019"
               value={newTrip.startDate}
               onChange={this.startDateChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="endDate">Start Date:</label>
+            <input
+              type="date"
+              className="form-control"
+              id="endDate"
+              aria-describedby="endDateHelp"
+              placeholder="01/12/2019"
+              value={newTrip.endDate}
+              onChange={this.endDateChange}
             />
           </div>
           <button className="btn btn-danger">Save Trip</button>
