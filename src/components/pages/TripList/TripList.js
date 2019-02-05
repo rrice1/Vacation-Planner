@@ -27,8 +27,8 @@ class TripList extends React.Component {
     ));
     return (
       <div className="listings col">
-        <h2>Trips</h2>
-        <ul>{tripsItemComponents}</ul>
+        <h2>Your Trips</h2>
+        <div>{tripsItemComponents}</div>
       </div>
     );
   }
