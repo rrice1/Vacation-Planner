@@ -12,12 +12,12 @@
     "localTransportationOneWay": 6,
     "bananas": 7,
     "finalCost": 200,
-    "finalCostExchange": 200,
+    "finalCostExchange": 175,
     "startDate": "2019-01-11",
     "endDate": "2019-01-21",
     "numberOfDays": 7,
     "currency": "USD",
-    "currency2": "MAD"
+    "currency2": "EUR"
   },
   "vacation2": {
 		"uid": "CJnxunlfYHXaahb5d4fIZvLG5uy2",
@@ -32,12 +32,12 @@
     "localTransportationOneWay": 6,
     "bananas": 7,
     "finalCost": 300,
-    "finalCostExchange": 32,
+    "finalCostExchange": 213,
     "startDate": "2019-02-25",
     "endDate": "2019-03-07",
     "numberOfDays": 7,
     "currency": "MAD",
-    "currency2": "MAD"
+    "currency2": "CNY"
   },
   "vacation3": {
 		"uid": "CJnxunlfYHXaahb5d4fIZvLG5uy2",
@@ -52,12 +52,12 @@
     "localTransportationOneWay": 6,
     "bananas": 7,
     "finalCost": 794,
-    "finalCostExchange": 118,
+    "finalCostExchange": 8412,
     "startDate": "2019-03-07",
     "endDate": "2019-04-15",
     "numberOfDays": 7,
     "currency": "CNY",
-    "currency2": "MAD"
+    "currency2": "INR"
   },
   "vacation4": {
 		"uid": "CJnxunlfYHXaahb5d4fIZvLG5uy2",
@@ -72,12 +72,12 @@
     "localTransportationOneWay": 6,
     "bananas": 7,
     "finalCost": 26610,
-    "finalCostExchange": 243,
+    "finalCostExchange": 187,
     "startDate": "2019-05-31",
     "endDate": "2019-06-11",
     "numberOfDays": 7,
     "currency": "JPY",
-    "currency2": "MAD"
+    "currency2": "GBP"
   },
   "vacation5": {
 		"uid": "firebaseUid",
@@ -92,11 +92,11 @@
     "localTransportationOneWay": 6,
     "bananas": 7,
     "finalCost": 350,
-    "finalCostExchange": 350,
+    "finalCostExchange": 305,
     "startDate": "2019-07-04",
     "endDate": "2019-07-11",
     "numberOfDays": 7,
     "currency": "USD",
-    "currency2": "MAD"
+    "currency2": "EUR"
   }
 }
