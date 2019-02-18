@@ -23,7 +23,6 @@ const getCountry2Data = getOtherCountry => new Promise((resolve, reject) => {
 const getRate = (getCurrency, getOtherCurrency) => new Promise((resolve, reject) => {
   axios.get(`https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=${getCurrency}&to_currency=${getOtherCurrency}&apikey=${exchangeRateNumber}`)
     .then((result) => {
-      console.log(result.data);
       resolve(result.data['Realtime Currency Exchange Rate']['5. Exchange Rate']);
     })
     .catch(err => reject(err));

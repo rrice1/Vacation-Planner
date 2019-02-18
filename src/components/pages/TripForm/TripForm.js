@@ -107,16 +107,16 @@ class TripForm extends React.Component {
     const { isEditing } = this.props;
     const title = () => {
       if (isEditing) {
-        return <h2>Edit Trip:</h2>;
+        return <h2>Edit Trip</h2>;
       }
-      return <h2>Add New Trip:</h2>;
+      return <h2>Add New Trip</h2>;
     };
     return (
-      <div className="trip-form col">
+      <div className="trip-form col myForm">
         {title()}
         <form onSubmit={this.formSubmit}>
           <div className="form-group">
-            <label htmlFor="vacationName">Vacation Name:</label>
+            <label className="vacName" htmlFor="vacationName">Vacation Name:</label>
             <input
               type="text"
               className="form-control"
@@ -128,7 +128,7 @@ class TripForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="country">Country:</label>
+            <label className="vacName" htmlFor="country">Country:</label>
             <input
               type="text"
               className="form-control"
@@ -140,7 +140,7 @@ class TripForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="country2">Your home country:</label>
+            <label className="vacName" htmlFor="country2">Your home country:</label>
             <input
               type="text"
               className="form-control"
@@ -152,7 +152,7 @@ class TripForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="inexpensiveRestaurant">Inexpensive Restaurant:</label>
+            <label className="vacName" htmlFor="inexpensiveRestaurant">Inexpensive Restaurant:</label>
             <input
               type="number"
               className="form-control"
@@ -164,7 +164,7 @@ class TripForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="threeCourseMeal">Three Course Meal:</label>
+            <label className="vacName" htmlFor="threeCourseMeal">Three Course Meal:</label>
             <input
               type="number"
               className="form-control"
@@ -175,8 +175,9 @@ class TripForm extends React.Component {
               onChange={this.threeCourseMealChange}
             />
           </div>
+          <div className="funDiv">
           <div className="form-group">
-            <label htmlFor="domesticBeer">Domestic Beer:</label>
+            <label className="vacName" htmlFor="domesticBeer">Domestic Beer:</label>
             <input
               type="number"
               className="form-control"
@@ -188,7 +189,7 @@ class TripForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="waterBottles">Water Bottles:</label>
+            <label className="vacaName" htmlFor="waterBottles">Water Bottles:</label>
             <input
               type="number"
               className="form-control"
@@ -200,7 +201,7 @@ class TripForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="gasConsumed">Gas Consumed:</label>
+            <label className="vacaName" htmlFor="gasConsumed">Gas Consumed:</label>
             <input
               type="number"
               className="form-control"
@@ -212,7 +213,7 @@ class TripForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="localTransportationOneWay">Local Transportation One Way:</label>
+            <label className="vacaName" htmlFor="localTransportationOneWay">Local Transportation One Way:</label>
             <input
               type="number"
               className="form-control"
@@ -224,7 +225,7 @@ class TripForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="bananas">Bananas:</label>
+            <label className="vacayName" htmlFor="bananas">Bananas:</label>
             <input
               type="number"
               className="form-control"
@@ -236,7 +237,7 @@ class TripForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="startDate">Start Date:</label>
+            <label className="vacName" htmlFor="startDate">Start Date:</label>
             <input
               type="date"
               className="form-control"
@@ -248,7 +249,7 @@ class TripForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="endDate">Start Date:</label>
+            <label className="vacName" htmlFor="endDate">End Date:</label>
             <input
               type="date"
               className="form-control"
@@ -259,7 +260,8 @@ class TripForm extends React.Component {
               onChange={this.endDateChange}
             />
           </div>
-          <button className="btn btn-danger">Save Trip</button>
+          <button className="btn btn-primary">Save Trip</button>
+          </div>
         </form>
       </div>
     );

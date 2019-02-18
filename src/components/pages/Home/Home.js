@@ -11,7 +11,7 @@ class Home extends React.Component {
     return (
       <div className='Home'>
         <div className="card-deck mt-5">
-          <div className="card border-dark" id="trips" onClick={this.changeView}>
+          <div className="card border-dark myHomeCards" id="trips" onClick={this.changeView}>
             <div className="card-body text-center">
               <h4 className="card-title"><i className="fas fa-plane fa-7x"></i></h4>
               <h6 className="card-subtitle mb-2 text-muted">My Trips</h6>
@@ -19,7 +19,7 @@ class Home extends React.Component {
             </div>
           </div>
           <div className="card border-dark" id='trips/add' onClick={this.changeView}>
-            <div className="card-body text-center">
+            <div className="card-body text-center myHomeCards">
               <h4 className="card-title"><i className="fas fa-map-marked-alt fa-7x"></i></h4>
               <h6 className="card-subtitle mb-2 text-muted">Add Trips</h6>
               <p className="card-text">Create a Trip</p>

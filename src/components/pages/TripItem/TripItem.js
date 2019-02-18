@@ -51,10 +51,18 @@ class TripItem extends React.Component {
     if (trip.uid === uid) {
       return (
       <div className="trip-item text-center border" onClick={this.tripClick}>
+        <span className="funClass">Trip Name:</span>
         <span className="col-7">{trip.vacationName}</span>
+        <span className="funClass">Country:</span>
         <span className="col-7">{trip.country}</span>
-        <span className="col-7">{trip.finalCost} {trip.currency} or {trip.finalCostExchange} {trip.currency2}</span>
-        <span className="col-7">Trip Duration: {trip.startDate} - {trip.endDate}</span>
+        <span className="funClass">Trip Duration:</span>
+        <span className="col-7">{trip.startDate} - {trip.endDate}</span>
+        <div>
+        <span className="funClass">Estimated Trip Cost:</span>
+        <span className="col-7"> {trip.finalCost} {trip.currency}</span>
+        <span className="funClass">which is the equivalent of</span>
+        <span className="col-7">{trip.finalCostExchange} {trip.currency2}</span>
+        </div>
         {makeButtons()}
       </div>
       );
