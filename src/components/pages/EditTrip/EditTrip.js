@@ -24,7 +24,6 @@ class EditTrip extends React.Component {
     const tripId = this.props.match.params.id;
     tripRequest.getSingleTrip(tripId)
       .then((trip) => {
-        console.log(trip);
         this.setState({ trip: trip.data });
       })
       .catch(err => console.error('error with getSingleListing', err));
