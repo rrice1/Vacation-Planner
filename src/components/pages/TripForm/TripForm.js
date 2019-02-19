@@ -146,7 +146,7 @@ class TripForm extends React.Component {
               className="form-control"
               id="country2"
               aria-describedby="country2Help"
-              placeholder="Morocco"
+              placeholder="United States"
               value={newTrip.country2}
               onChange={this.country2Change}
             />
@@ -164,7 +164,7 @@ class TripForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label className="vacName" htmlFor="threeCourseMeal">Three Course Meal:</label>
+            <label className="vacaName" htmlFor="threeCourseMeal">Three Course Meal:</label>
             <input
               type="number"
               className="form-control"
@@ -177,7 +177,7 @@ class TripForm extends React.Component {
           </div>
           <div className="funDiv">
           <div className="form-group">
-            <label className="vacName" htmlFor="domesticBeer">Domestic Beer:</label>
+            <label className="vacaName" htmlFor="domesticBeer">Domestic Beer:</label>
             <input
               type="number"
               className="form-control"
@@ -225,7 +225,7 @@ class TripForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label className="vacayName" htmlFor="bananas">Bananas:</label>
+            <label className="vacName" htmlFor="bananas">Bananas:</label>
             <input
               type="number"
               className="form-control"
